@@ -2,16 +2,16 @@
 class HomebrewBridgeVpnCli < Formula
   desc ""
   homepage ""
-  version "0.1.0-rc1"
+  version "0.1.0-rc2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc1/bridge-vpn-cli_0.1.0-rc1_Darwin_x86_64.tar.gz"
-    sha256 "5f772832626010698335881414f0e02b16f3523b6dd8b2173ddbe93a9fb833da"
+    url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc2/bridge-vpn-cli_0.1.0-rc2_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "18705311c262edf9d4c9f822fc06e42bce64c53dff650c8a003868e681402177"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc1/bridge-vpn-cli_0.1.0-rc1_Linux_x86_64.tar.gz"
-      sha256 "57b3f9cecc0753f69b8bc32e2d71801c7c1973816728ec653c05788fb4ac93b7"
+      url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc2/bridge-vpn-cli_0.1.0-rc2_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "2a799c3705278b88e3291309d774a98ef4bbf01d516ded38c21b3ae543d259cb"
     end
   end
   
