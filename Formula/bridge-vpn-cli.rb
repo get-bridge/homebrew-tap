@@ -6,11 +6,11 @@ class BridgeVpnCli < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc4/bridge-vpn-cli_0.1.0-rc4_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc4/bridge-vpn-cli_0.1.0-rc4_Darwin_x86_64.tar.gz", :using => GitHubGitDownloadStrategy
     sha256 "8c61690cc18a385239fdadcd4010b20cd662b8d453c2ce83c5ddae408cfc7feb"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc4/bridge-vpn-cli_0.1.0-rc4_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc4/bridge-vpn-cli_0.1.0-rc4_Linux_x86_64.tar.gz", :using => GitHubGitDownloadStrategy
       sha256 "9f57574f2c7ee91c9591c6f0b3aa7c6203d548b803e6f6c98642c8570b9f6648"
     end
   end
