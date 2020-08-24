@@ -3,16 +3,16 @@ require_relative "../download-strategy.rb"
 class BridgeVpnCli < Formula
   desc "CLI Utility for connecting to the Bridge VPN"
   homepage "https://github.com/instructure-bridge/bridge-vpn-cli"
-  version "0.1.0-rc7"
+  version "0.1.0-rc8"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc7/bridge-vpn-cli_0.1.0-rc7_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "9dc75b0f2d4ac78915639e4d3be3251d97d69fb490568482fba19d68168077e2"
+    url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc8/bridge-vpn-cli_0.1.0-rc8_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "ada75a36cf4a860bb95eef4362997fbac96c42423fd6baec7a0a8aaba83a1896"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc7/bridge-vpn-cli_0.1.0-rc7_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "373a108adfcb660bd1402447477559a65c3136d00c891e093f3dba09727f9bf1"
+      url "https://github.com/instructure-bridge/bridge-vpn-cli/releases/download/v0.1.0-rc8/bridge-vpn-cli_0.1.0-rc8_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "632c2726e86711027fb531aaa2bb962a0db4c0fc7ad9a683abc0914ce64a7099"
     end
   end
   
