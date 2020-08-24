@@ -1,11 +1,13 @@
 # Bridge VPN CLI
 
 ## How do I install these formulae?
-Grab yourself a [personal access token](https://github.com/settings/tokens/new?scopes=repo&description=Homebrew%20for%20Bridge%20VPN%20CLI). Then, `export HOMEBREW_GITHUB_API_TOKEN=...`.
+Grab yourself a [personal access token](https://github.com/settings/tokens/new?scopes=repo&description=Homebrew%20for%20Bridge%20VPN%20CLI). Then...
 
-`brew install instructure-bridge/bridge-vpn-cli/bridge-vpn-cli`
-
-Or `brew tap instructure-bridge/bridge-vpn-cli` and then `brew install bridge-vpn-cli`.
+```bash
+export HOMEBREW_GITHUB_API_TOKEN=...
+brew tap instructure-bridge/bridge-vpn-cli git@github.com:instructure-bridge/homebrew-bridge-vpn-cli.git
+brew install bridge-vpn-cli
+```
 
 Or install via URL (which will not receive updates):
 
