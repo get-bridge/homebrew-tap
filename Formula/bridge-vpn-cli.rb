@@ -15,7 +15,7 @@ class BridgeVpnCli < Formula
       sha256 "eb99b588059bdd9fd61926a82e5b222b9dd239a4551c7329cedc9c6c8bc8f81f"
     end
   end
-  
+
   depends_on "sshuttle"
   depends_on "openconnect"
 
