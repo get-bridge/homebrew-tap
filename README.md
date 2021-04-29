@@ -6,7 +6,7 @@ Grab yourself a [personal access token](https://github.com/settings/tokens/new?s
 
 ```bash
 export HOMEBREW_GITHUB_API_TOKEN=...
-brew tap instructure-bridge/tap git@github.com:instructure-bridge/homebrew-tap.git
+brew tap get-bridge/tap git@github.com:get-bridge/homebrew-tap.git
 ```
 
 ## Bridge VPN CLI
@@ -18,7 +18,7 @@ brew install bridge-vpn-cli
 Or install via URL (which will not receive updates):
 
 ```
-brew install https://raw.githubusercontent.com/instructure-bridge/homebrew-tap/master/Formula/bridge-vpn-cli.rb
+brew install https://raw.githubusercontent.com/get-bridge/homebrew-tap/master/Formula/bridge-vpn-cli.rb
 ```
 
 ## Instructure Truss-cli
@@ -30,7 +30,7 @@ brew install truss-cli
 Or install via URL (which will not receive updates):
 
 ```
-brew install https://raw.githubusercontent.com/instructure-bridge/homebrew-tap/master/Formula/bridge-vpn-cli.rb
+brew install https://raw.githubusercontent.com/get-bridge/homebrew-tap/master/Formula/bridge-vpn-cli.rb
 ```
 
 ## Documentation
