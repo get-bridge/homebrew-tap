@@ -6,20 +6,29 @@ require_relative "../download-strategy.rb"
 class BridgeVpnCli < Formula
   desc "CLI Utility for connecting to the Bridge VPN"
   homepage "https://github.com/get-bridge/bridge-vpn-cli"
-  version "0.1.4"
+  version "0.1.5"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.4/bridge-vpn-cli_0.1.4_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "570c74fc75e49446ff658e2253c8f13df76b9c2a87b64492a4092b40b86bace1"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.5/bridge-vpn-cli_0.1.5_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "2d46deaad715d7ace1289444cd35120a4cfdbffcd967427e4d5c7c58739afee1"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.5/bridge-vpn-cli_0.1.5_Darwin_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "4db176736b9ec0fe8fa181f4ce21f4fc75dd6a61d10f3883ad214791140ca58f"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.4/bridge-vpn-cli_0.1.4_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "c06db5038f1045fab65c5bb1e43b118148052408f9b497bf2cfbaa3bed1e80ea"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.4/bridge-vpn-cli_0.1.4_Linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "fa498bf60fbb59b2915a7b66871f43f09121e02146ce0c3b1c5adcc9f58ed338"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.5/bridge-vpn-cli_0.1.5_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "8ba35d1da3499183f133e968a0ab89af04d9b52da075d52646a590e0976e57fc"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.5/bridge-vpn-cli_0.1.5_Linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "ea1c636a0503cd91b0c03dbd93406064e765734ced203e0e3a56ebac7fd73a1c"
+    end
   end
 
   depends_on "sshuttle"
