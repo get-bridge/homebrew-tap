@@ -30,11 +30,11 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     "https://github.com/#{@owner}/#{@repo}/#{@filepath}"
   end
 
-  private
-
-  def _fetch(url:, resolved_url:)
+  def fetch(timeout: nil, **options)
     curl_download download_url, "--header", "Authorization: token #{@github_token}", to: temporary_path
   end
+
+  private
 
   def set_github_token
     @github_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
@@ -94,13 +94,13 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
     res['location']
   end
 
-  private
-
-  def _fetch(url:, resolved_url:)
+  def fetch(timeout: nil, **options)
     # HTTP request header `Accept: application/octet-stream` is required.
     # Without this, the GitHub API will respond with metadata, not binary.
     curl_download download_url, "--header", "Accept: application/octet-stream", to: temporary_path
   end
+
+  private
 
   def asset_id
     @asset_id ||= resolve_asset_id
