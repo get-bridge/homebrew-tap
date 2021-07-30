@@ -6,28 +6,28 @@ require_relative "../download-strategy.rb"
 class BridgeVpnCli < Formula
   desc "CLI Utility for connecting to the Bridge VPN"
   homepage "https://github.com/get-bridge/bridge-vpn-cli"
-  version "0.1.5"
+  version "0.1.7"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.5/bridge-vpn-cli_0.1.5_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "2d46deaad715d7ace1289444cd35120a4cfdbffcd967427e4d5c7c58739afee1"
+      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.7/bridge-vpn-cli_0.1.7_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "29d25fc33ad272f97a0fe46678a06120428c62a75e5baaeb577acce7a85cc9d6"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.5/bridge-vpn-cli_0.1.5_Darwin_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "4db176736b9ec0fe8fa181f4ce21f4fc75dd6a61d10f3883ad214791140ca58f"
+      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.7/bridge-vpn-cli_0.1.7_Darwin_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "1b5525d73fb0f4673b5282cb4520a4474a0e4bda4861010c5880c128039f2561"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.5/bridge-vpn-cli_0.1.5_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "8ba35d1da3499183f133e968a0ab89af04d9b52da075d52646a590e0976e57fc"
+      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.7/bridge-vpn-cli_0.1.7_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "4087b3c6d2b067c2a723b6542f7fb5483a2723507631e08e582d3e535f2dc0d9"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.5/bridge-vpn-cli_0.1.5_Linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "ea1c636a0503cd91b0c03dbd93406064e765734ced203e0e3a56ebac7fd73a1c"
+      url "https://github.com/get-bridge/bridge-vpn-cli/releases/download/v0.1.7/bridge-vpn-cli_0.1.7_Linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "98340fe2be863ee7e6d1e22a1cf81f30a9e26dee277a037c1caeb716fd811476"
     end
   end
 
