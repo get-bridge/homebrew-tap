@@ -7,7 +7,6 @@ class BridgeVpnCli < Formula
   desc "CLI Utility for connecting to the Bridge VPN"
   homepage "https://github.com/get-bridge/bridge-vpn-cli"
   version "0.1.7"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?

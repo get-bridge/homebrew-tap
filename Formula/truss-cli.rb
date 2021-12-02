@@ -6,7 +6,6 @@ class TrussCli < Formula
   desc "CLI to help manage many k8s clusters"
   homepage "https://github.com/get-bridge/truss-cli"
   version "0.2.3"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.3/truss-cli_0.2.3_Darwin_x86_64.tar.gz"
