@@ -5,12 +5,20 @@
 class TrussCli < Formula
   desc "CLI to help manage many k8s clusters"
   homepage "https://github.com/get-bridge/truss-cli"
-  version "0.2.4"
+  version "0.2.5"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.5/truss-cli_0.2.5_Darwin_arm64.tar.gz"
+      sha256 "c174cf81a641c86c092d967d9dbbdbf9f142ee6fd560174f92c0264c0939818f"
+
+      def install
+        bin.install "truss"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.4/truss-cli_0.2.4_Darwin_x86_64.tar.gz"
-      sha256 "ae654dfa3742941a62d5e23f689b15855b4368ea562aeef8603040918561d234"
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.5/truss-cli_0.2.5_Darwin_x86_64.tar.gz"
+      sha256 "5c5f8ffacd18e17d6ffe0624f3ce6926bf6f51c045553048d02d27b382e0a05c"
 
       def install
         bin.install "truss"
@@ -20,16 +28,16 @@ class TrussCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.4/truss-cli_0.2.4_Linux_arm64.tar.gz"
-      sha256 "d8520769ee3f225c78422998e3d19dbd7af9c457433295fbf16ee5f63aeeb232"
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.5/truss-cli_0.2.5_Linux_arm64.tar.gz"
+      sha256 "1e26255e60ead795294f48401bbdc6505011bec499f0ad650d7403231394a58d"
 
       def install
         bin.install "truss"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.4/truss-cli_0.2.4_Linux_x86_64.tar.gz"
-      sha256 "3cca685d9804708c97d6726b936be38cb2d6241d893d140e4f70480e58ff6f40"
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.5/truss-cli_0.2.5_Linux_x86_64.tar.gz"
+      sha256 "0dda8db0cee666131c6a309727104d43353da563d4df58c4bc90a6d39ad914fb"
 
       def install
         bin.install "truss"
