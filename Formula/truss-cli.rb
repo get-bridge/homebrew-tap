@@ -5,20 +5,20 @@
 class TrussCli < Formula
   desc "CLI to help manage many k8s clusters"
   homepage "https://github.com/get-bridge/truss-cli"
-  version "0.2.6"
+  version "0.2.7"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.6/truss-cli_0.2.6_Darwin_x86_64.tar.gz"
-      sha256 "31e532ca31fccda22b48b9ef9446c284f5231b10b8151e4c979cc9271f304e77"
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.7/truss-cli_0.2.7_Darwin_x86_64.tar.gz"
+      sha256 "2979f4042eb23303bc49a4dbbfbd0e1f0be07f1e3887e065b086b0c71f55df07"
 
       def install
         bin.install "truss"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.6/truss-cli_0.2.6_Darwin_arm64.tar.gz"
-      sha256 "3a1b299e42c322dae1dd34903c07ee68c18f6ca6d3d92d56cba3c9dbd4d6978b"
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.7/truss-cli_0.2.7_Darwin_arm64.tar.gz"
+      sha256 "0fffbeb0357177e084245cef555c62404ee0a4b5b5d9a064157240c5fbe8e93f"
 
       def install
         bin.install "truss"
@@ -28,16 +28,16 @@ class TrussCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.6/truss-cli_0.2.6_Linux_arm64.tar.gz"
-      sha256 "d0f00bb1404121f5136f5863a30f80a3faf441c001248295c7759fec4a9442de"
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.7/truss-cli_0.2.7_Linux_arm64.tar.gz"
+      sha256 "fd4a535440e4a51ebe5394c7fc068855d952292c4c3b347d612dce96af1eb630"
 
       def install
         bin.install "truss"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.6/truss-cli_0.2.6_Linux_x86_64.tar.gz"
-      sha256 "650acb0fb3f880b7d687b38b22b006c8f54eb007762447168bfba18c44df5d68"
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.7/truss-cli_0.2.7_Linux_x86_64.tar.gz"
+      sha256 "07374a5a1634af5c67eb418cb6813a2ed5c055733fa2014e53daaa23750c32ae"
 
       def install
         bin.install "truss"
