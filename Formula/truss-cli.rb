@@ -5,24 +5,24 @@
 class TrussCli < Formula
   desc "CLI to help manage many k8s clusters"
   homepage "https://github.com/get-bridge/truss-cli"
-  version "0.2.9"
+  version "0.3.0"
 
   depends_on "kubectl"
   depends_on "vault"
   depends_on "sshuttle"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.9/truss-cli_0.2.9_Darwin_x86_64.tar.gz"
-      sha256 "d5ce9c6d4258a02d8297d438373ab7c0a69ebebf2b447b234790032a7fe11a6f"
+    if Hardware::CPU.arm?
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.3.0/truss-cli_0.3.0_Darwin_arm64.tar.gz"
+      sha256 "0d84ea70f0ad6b2a97420b7ca16def8437c55663c2f7b6c93dca72c9a763c60f"
 
       def install
         bin.install "truss"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.9/truss-cli_0.2.9_Darwin_arm64.tar.gz"
-      sha256 "b5ed4f7c00439b13fe80677c3331192fbe2ec6476e5f7f700908f386271f5a23"
+    if Hardware::CPU.intel?
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.3.0/truss-cli_0.3.0_Darwin_x86_64.tar.gz"
+      sha256 "46f2b17e331aeb1405d7943a0d0dcf1d5f55da94d9eb373577606442c7e46947"
 
       def install
         bin.install "truss"
@@ -32,16 +32,16 @@ class TrussCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.9/truss-cli_0.2.9_Linux_arm64.tar.gz"
-      sha256 "22b0f56a5ba2d719958169710d44331c99f780d4ba4255ce4cb0403538b6264c"
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.3.0/truss-cli_0.3.0_Linux_arm64.tar.gz"
+      sha256 "8c78e196f9bf5b4999abdfd215f110dd937bf3550df1f689087a1619c4d58ea3"
 
       def install
         bin.install "truss"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/truss-cli/releases/download/v0.2.9/truss-cli_0.2.9_Linux_x86_64.tar.gz"
-      sha256 "dca5197a13f97fc233d465c5f0d6076d8009e2f9a0f62cd51bc74e060dca21be"
+      url "https://github.com/get-bridge/truss-cli/releases/download/v0.3.0/truss-cli_0.3.0_Linux_x86_64.tar.gz"
+      sha256 "d736b35fd475e8effea33bd8758ccae2e4f51e44860946e61c2897c1a4d23bc1"
 
       def install
         bin.install "truss"
