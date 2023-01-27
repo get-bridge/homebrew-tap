@@ -1,0 +1,14 @@
+{
+    "version": "0.0.19",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/get-bridge/truss-local/releases/download/v0.0.19/truss-local-v0.0.19-windows-amd64.tar.gz",
+            "bin": [
+                "truss-local.exe"
+            ],
+            "hash": "da227f101330fd3005a6a5d75f0772cb25e484cdb68fababcf083c52fbf9704c"
+        }
+    },
+    "homepage": "https://github.com/get-bridge/truss-local",
+    "description": "CLI for running a Local Kubernetes Cluster"
+}
