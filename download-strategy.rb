@@ -1,8 +1,32 @@
-require "download_strategy"
+# BSD 2-Clause License
+#
+# Copyright (c) 2009-present, Homebrew contributors
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# * Redistributions of source code must retain the above copyright notice, this
+#   list of conditions and the following disclaimer.
+#
+# * Redistributions in binary form must reproduce the above copyright notice,
+#   this list of conditions and the following disclaimer in the documentation
+#   and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # GitHubPrivateRepositoryDownloadStrategy downloads contents from GitHub
 # Private Repository. To use it, add
-# `:using => :github_private_repo` to the URL section of
+# `:using => GitHubPrivateRepositoryDownloadStrategy` to the URL section of
 # your formula. This download strategy uses GitHub access tokens (in the
 # environment variables `HOMEBREW_GITHUB_API_TOKEN`) to sign the request.  This
 # strategy is suitable for corporate use just like S3DownloadStrategy, because
@@ -27,19 +51,13 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   end
 
   def download_url
-    "https://github.com/#{@owner}/#{@repo}/#{@filepath}"
+    "https://#{@github_token}@github.com/#{@owner}/#{@repo}/#{@filepath}"
   end
 
   private
 
-  def _fetch(url:, resolved_url:, timeout:)
-    curl_download(
-      download_url,
-      "--header",
-      "Authorization: token #{@github_token}",
-      to: temporary_path,
-      timeout: timeout
-    )
+  def _fetch(url:, resolved_url:)
+    curl_download download_url, to: temporary_path
   end
 
   def set_github_token
@@ -66,12 +84,11 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
 end
 
 # GitHubPrivateRepositoryReleaseDownloadStrategy downloads tarballs from GitHub
-# Release assets. To use it, add `:using => :github_private_release` to the URL section
-# of your formula. This download strategy uses GitHub access tokens (in the
+# Release assets. To use it, add
+# `:using => GitHubPrivateRepositoryReleaseDownloadStrategy` to the URL section of
+# your formula. This download strategy uses GitHub access tokens (in the
 # environment variables HOMEBREW_GITHUB_API_TOKEN) to sign the request.
 class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDownloadStrategy
-  require 'net/http'
-
   def initialize(url, name, version, **meta)
     super
   end
@@ -86,18 +103,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
   end
 
   def download_url
-    #"https://#{@github_token}@api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}"
-    #blah = curl_output "--header", "Accept: application/octet-stream", "--header", "Authorization: token #{@github_token}", "-I"
-    uri = URI("https://api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}")
-    req = Net::HTTP::Get.new(uri)
-    req['Accept'] = 'application/octet-stream'
-    req['Authorization'] = "token #{@github_token}"
-
-    res = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => uri.scheme == 'https') do |http|
-      http.request(req)
-    end
-
-    res['location']
+    "https://#{@github_token}@api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}"
   end
 
   private
@@ -105,13 +111,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
   def _fetch(url:, resolved_url:, timeout:)
     # HTTP request header `Accept: application/octet-stream` is required.
     # Without this, the GitHub API will respond with metadata, not binary.
-    curl_download(
-      download_url,
-      "--header",
-      "Accept: application/octet-stream",
-      to: temporary_path,
-      timeout: timeout
-    )
+    curl_download download_url, "--header", "Accept: application/octet-stream", to: temporary_path
   end
 
   def asset_id
@@ -127,7 +127,12 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
   end
 
   def fetch_release_metadata
-    release_url = "https://api.github.com/repos/#{@owner}/#{@repo}/releases/tags/#{@tag}"
-    GitHub::API.open_rest(release_url)
+    # release_url = "https://api.github.com/repos/#{@owner}/#{@repo}/releases/tags/#{@tag}"
+    GitHub.get_release(@owner, @repo, @tag)
+  end
+
+  def resolve_url_basename_time_file_size(url, timeout: nil)
+    url = download_url
+    super
   end
 end
