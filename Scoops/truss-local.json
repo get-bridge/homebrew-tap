@@ -1,12 +1,19 @@
 {
-    "version": "0.0.23",
+    "version": "0.0.24",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/get-bridge/truss-local/releases/download/v0.0.23/truss-local-v0.0.23-windows-amd64.tar.gz",
+            "url": "https://github.com/get-bridge/truss-local/releases/download/v0.0.24/truss-local-v0.0.24-windows-amd64.tar.gz",
             "bin": [
                 "truss-local.exe"
             ],
-            "hash": "7fe609537f4fcf147712c590d1dc1414730f43f357e21b94a85547fcda3724dc"
+            "hash": "8c62ffe36b367dcfa75f3e231d92839a98de6a1b86636d39f729569eb5c04ee5"
+        },
+        "arm64": {
+            "url": "https://github.com/get-bridge/truss-local/releases/download/v0.0.24/truss-local-v0.0.24-windows-arm64.tar.gz",
+            "bin": [
+                "truss-local.exe"
+            ],
+            "hash": "2b8d6b9344430699740cf724a62174a3862b86881e5f2964e7629b9b6fcf1e70"
         }
     },
     "homepage": "https://github.com/get-bridge/truss-local",
