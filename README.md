@@ -1,4 +1,4 @@
-# Bridge
+# Homebrew Tap
 
 ## How do I install these formulae?
 
@@ -21,7 +21,7 @@ Or install via URL (which will not receive updates):
 brew install https://raw.githubusercontent.com/get-bridge/homebrew-tap/master/Formula/bridge-vpn-cli.rb
 ```
 
-## Instructure Truss-cli
+## Truss-cli
 
 ```
 brew install truss-cli
