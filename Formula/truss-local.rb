@@ -14,7 +14,7 @@ class TrussLocal < Formula
   on_macos do
     on_intel do
       url "https://github.com/get-bridge/truss-local/releases/download/v0.7.0-beta.1/truss-local-v0.7.0-beta.1-darwin-amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "97e123c6d667da21df504236b8f298e3d5b41075351846e4f2f07137c59e481a"
+      sha256 "e159f786628a3960ed866c9d746aa75564254d304c00a4c04372b202d5b40663"
 
       def install
         bin.install "truss-local"
@@ -22,7 +22,7 @@ class TrussLocal < Formula
     end
     on_arm do
       url "https://github.com/get-bridge/truss-local/releases/download/v0.7.0-beta.1/truss-local-v0.7.0-beta.1-darwin-arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "a87e4c3dc4954d1d2a4a0ee5984f4d7ccfb90a641a9923d3025b3ce58325bb82"
+      sha256 "e034e2c4af0064f9d0c2ad6598554df7e7dcaa4fcf4ae1de294365b2635d5c1c"
 
       def install
         bin.install "truss-local"
@@ -34,7 +34,7 @@ class TrussLocal < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/get-bridge/truss-local/releases/download/v0.7.0-beta.1/truss-local-v0.7.0-beta.1-linux-amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-        sha256 "ffbb385e2cd969d8f70f83560f3aed7366700af16a407b39d1a6900fc4e74d69"
+        sha256 "92669ff855c8a780b3a49a6e9a50f7391b471d28177c73a5679673ca45dbd531"
 
         def install
           bin.install "truss-local"
@@ -44,7 +44,7 @@ class TrussLocal < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/get-bridge/truss-local/releases/download/v0.7.0-beta.1/truss-local-v0.7.0-beta.1-linux-arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-        sha256 "9a94067f0978b5b6ec2374f41e210a045a74105c5fc79b918afc4fefb150f8d4"
+        sha256 "66478ec60ef973d664f026e4201edb70d82b6236e4a110fdca0e8043b4c0c243"
 
         def install
           bin.install "truss-local"
