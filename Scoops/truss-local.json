@@ -6,14 +6,14 @@
             "bin": [
                 "truss-local.exe"
             ],
-            "hash": "4be6e8dcbc1d3b79c0c558855c4029ae661370e6c9d3e7a5c3b200a89113c144"
+            "hash": "6e3c0044bb5ec789b17b1d6312671ce156dcc8f5052e260051e5ab7213115f9d"
         },
         "arm64": {
             "url": "https://github.com/get-bridge/truss-local/releases/download/v0.7.0-beta.1/truss-local-v0.7.0-beta.1-windows-arm64.tar.gz",
             "bin": [
                 "truss-local.exe"
             ],
-            "hash": "1304e7aa9ad9322d855d10ce51978585b3a211108b3c30301fd85bc2972fbdce"
+            "hash": "85de9ab256f9c9a7b00dfba83bace8828963198e6197e598e6a0d9b3f1ef8c6d"
         }
     },
     "homepage": "https://github.com/get-bridge/truss-local",
