@@ -1,21 +1,21 @@
 {
-    "version": "0.7.0-beta.6",
+    "version": "0.7.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/get-bridge/truss-local/releases/download/v0.7.0-beta.6/truss-local-v0.7.0-beta.6-windows-amd64.tar.gz",
+            "url": "https://github.com/get-bridge/truss-local/releases/download/v0.7.0/truss-local-v0.7.0-windows-amd64.tar.gz",
             "bin": [
                 "truss-local.exe"
             ],
-            "hash": "1f861c4eb1cfc293b748ee2c2e2ea653a7d8f7bd9bf52c8e2e33386f8d06057e"
+            "hash": "3c2883e060e780e29b10eac71791656797819e1d997e96ce18a5b5d7b35d51f4"
         },
         "arm64": {
-            "url": "https://github.com/get-bridge/truss-local/releases/download/v0.7.0-beta.6/truss-local-v0.7.0-beta.6-windows-arm64.tar.gz",
+            "url": "https://github.com/get-bridge/truss-local/releases/download/v0.7.0/truss-local-v0.7.0-windows-arm64.tar.gz",
             "bin": [
                 "truss-local.exe"
             ],
-            "hash": "47ebc50ef2dce5a3156018ad2d59bf3948fdda60b8542c7815e894e8ac1c461c"
+            "hash": "c17a854a7321c67b51f2be4dd1bc4bef6d22e8ec0f0785f003b328ee80a7125c"
         }
     },
     "homepage": "https://github.com/get-bridge/truss-local",
-    "description": "CLI for running a Local Kubernetes Cluster (beta)"
+    "description": "CLI for running a Local Kubernetes Cluster"
 }
