@@ -6,23 +6,23 @@ require_relative "../download-strategy.rb"
 class TrussLocal < Formula
   desc "CLI for running a Local Kubernetes Cluster"
   homepage "https://github.com/get-bridge/truss-local"
-  version "0.6.2"
+  version "0.7.0"
 
   depends_on "k3d"
   depends_on "pulumi"
 
   on_macos do
     on_intel do
-      url "https://github.com/get-bridge/truss-local/releases/download/v0.6.2/truss-local-v0.6.2-darwin-amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "0e1e33dd246229e9210cb662138490a4358343c84b7ae26fb21654639b9c6bcb"
+      url "https://github.com/get-bridge/truss-local/releases/download/v0.7.0/truss-local-v0.7.0-darwin-amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "30f8681fab651be57cc1202c740df19820ceb4cd155100db2bbb49078d3ac3d9"
 
       def install
         bin.install "truss-local"
       end
     end
     on_arm do
-      url "https://github.com/get-bridge/truss-local/releases/download/v0.6.2/truss-local-v0.6.2-darwin-arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "578b430a5c864388fc8ba1917d84fa5b55d8d4975a49519ba8b5f8947e0f48f6"
+      url "https://github.com/get-bridge/truss-local/releases/download/v0.7.0/truss-local-v0.7.0-darwin-arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "b0f8f4f3a07a853293553e67e31fc0e939c38e08675e6286182b0a0242573766"
 
       def install
         bin.install "truss-local"
@@ -33,8 +33,8 @@ class TrussLocal < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/get-bridge/truss-local/releases/download/v0.6.2/truss-local-v0.6.2-linux-amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-        sha256 "c57d6609a1dce6372df889d0ed2bca4228477a14561e8359fa2ee379e282a2e5"
+        url "https://github.com/get-bridge/truss-local/releases/download/v0.7.0/truss-local-v0.7.0-linux-amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+        sha256 "4662bee7817d1d666b8e7e55cf9903ed020ceb5a1a15b3d540ef07f1675b5921"
 
         def install
           bin.install "truss-local"
@@ -43,8 +43,8 @@ class TrussLocal < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/get-bridge/truss-local/releases/download/v0.6.2/truss-local-v0.6.2-linux-arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-        sha256 "d5d6992c23655af6dce9d48920d17c39af99939d55324972c05d7c4f8326b529"
+        url "https://github.com/get-bridge/truss-local/releases/download/v0.7.0/truss-local-v0.7.0-linux-arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+        sha256 "d9de016b8d3aad1e0d604bfcd32d9751115db02f06b4d2bb4c31454e86a27a2e"
 
         def install
           bin.install "truss-local"
